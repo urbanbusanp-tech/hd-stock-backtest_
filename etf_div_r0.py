@@ -15,7 +15,7 @@ with st.sidebar:
     # PDF 리포트 기반 기본 티커 및 비중 설정
     default_tickers = "schd,dnb"
     tickers_input = st.text_input("투자 종목", default_tickers)
-    weights_input = st.text_input("배분 비중", "60, 40")
+    weights_input = st.text_input("배분 비중", "60,40")
     initial_investment = st.number_input("초기 투자 금액 (₩)", value=10000000)
     monthly_deposit = st.number_input("매월 추가 불입금 (₩)", value=0)
     
@@ -168,3 +168,4 @@ if df_price is not None and not df_price.empty:
 else:
 
     st.error("데이터를 수집할 수 없습니다. 설정을 확인하세요.")
+
