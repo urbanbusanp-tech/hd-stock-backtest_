@@ -13,9 +13,9 @@ st.title("🌐 통합 자산배분 백테스터")
 with st.sidebar:
     st.header("1. 투자 설정")
     # PDF 리포트 기반 기본 티커 및 비중 설정
-    default_tickers = "379810.KS, 458730.KS, 152100.KS, 453810.KS, 283580.KS, 241180.KS, 385560.KS, 476760.KS, 411060.KS, 469830.KS"
+    default_tickers = "schd,dnb"
     tickers_input = st.text_input("투자 종목", default_tickers)
-    weights_input = st.text_input("배분 비중", "10, 10, 8, 8, 8, 5, 14, 14, 20, 3")
+    weights_input = st.text_input("배분 비중", "60, 40")
     initial_investment = st.number_input("초기 투자 금액 (₩)", value=10000000)
     monthly_deposit = st.number_input("매월 추가 불입금 (₩)", value=0)
     
@@ -166,4 +166,5 @@ if df_price is not None and not df_price.empty:
     st.line_chart(fx_series)
 
 else:
+
     st.error("데이터를 수집할 수 없습니다. 설정을 확인하세요.")
